@@ -16,7 +16,6 @@ endforeach()
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/include
     ${GDAL_INCLUDE_DIR}
     ${GEOTIFF_INCLUDE_DIR}
     ${PROJECT_SOURCE_DIR}/io/bpf

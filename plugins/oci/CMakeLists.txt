@@ -5,11 +5,8 @@
 find_package(Oracle REQUIRED)
 message(STATUS "Building with Oracle support")
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/oci)
 include_directories(${ORACLE_INCLUDE_DIR})
 include_directories(
-    ${PROJECT_SOURCE_DIR}/include
     ${GDAL_INCLUDE_DIR}
     ${GEOTIFF_INCLUDE_DIR}
     ${PROJECT_SOURCE_DIR}/io/bpf

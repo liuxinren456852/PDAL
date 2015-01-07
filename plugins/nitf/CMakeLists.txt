@@ -2,8 +2,6 @@
 # NITF plugin CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/nitf)
 include_directories(${PROJECT_SOURCE_DIR}/io/las)
 
 find_package(Nitro QUIET 2.6)

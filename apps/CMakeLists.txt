@@ -8,25 +8,6 @@ cmake_minimum_required(VERSION 2.8)
 set(PDAL_SOURCE_DIR ../src)
 
 #------------------------------------------------------------------------------
-# includes
-#------------------------------------------------------------------------------
-
-include_directories(
-    .
-    ../include
-    ${PROJECT_SOURCE_DIR}/io/faux
-    ${PROJECT_SOURCE_DIR}/io/las
-    ${PROJECT_SOURCE_DIR}/kernels
-    ${PROJECT_SOURCE_DIR}/kernels/delta
-    ${PROJECT_SOURCE_DIR}/kernels/diff
-    ${PROJECT_SOURCE_DIR}/kernels/info
-    ${PROJECT_SOURCE_DIR}/kernels/pipeline
-    ${PROJECT_SOURCE_DIR}/kernels/random
-    ${PROJECT_SOURCE_DIR}/kernels/sort
-    ${PROJECT_SOURCE_DIR}/kernels/translate
-)
-
-#------------------------------------------------------------------------------
 # Collect programs to build
 #------------------------------------------------------------------------------
 

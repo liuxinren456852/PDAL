@@ -33,7 +33,6 @@
 * OF SUCH DAMAGE.
 ****************************************************************************/
 
-//#include <pdal/Kernels.hpp>
 #include "KernelFactory.hpp"
 #include <pdal/pdal_config.hpp>
 

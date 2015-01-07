@@ -2,10 +2,7 @@
 # Sort kernel CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/io/buffer)
-include_directories(${PROJECT_SOURCE_DIR}/kernels)
-include_directories(${PROJECT_SOURCE_DIR}/kernels/sort)
 
 #
 # Sort Kernel

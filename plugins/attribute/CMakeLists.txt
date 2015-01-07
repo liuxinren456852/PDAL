@@ -2,9 +2,6 @@
 # Attribute filter CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/filters/attribute)
-
 find_package(GEOS QUIET 3.3)
 set_package_properties(GEOS PROPERTIES PURPOSE "Enables attribute filter")
 

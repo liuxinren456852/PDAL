@@ -21,10 +21,7 @@
 # settings for PCL
 #------------------------------------------------------------------------------
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/pcl)
 include_directories(${PROJECT_SOURCE_DIR}/io/las)
-include_directories(${PROJECT_SOURCE_DIR}/kernels)
 
 find_package(PCL QUIET 1.7)
 

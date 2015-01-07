@@ -2,9 +2,6 @@
 # Icebridge plugin CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/icebridge)
-
 set (HDF5_FIND_COMPONENTS "CXX")
 find_package(HDF5 COMPONENTS CXX REQUIRED)
 if (HDF5_FOUND)

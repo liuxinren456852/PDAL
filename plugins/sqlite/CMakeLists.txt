@@ -2,8 +2,6 @@
 # SQLite plugin CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/sqlite)
 include_directories(${PROJECT_SOURCE_DIR}/io/las)
 
 find_package(SQLite3)

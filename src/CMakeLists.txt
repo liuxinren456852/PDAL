@@ -191,9 +191,6 @@ list (APPEND PDAL_HPP ${PDAL_CONFIG_HPP} )
 #source_group("Source Files\\plang" FILES ${PDAL_PLANG_CPP})
 
 
-# Standard include directory of PDAL library
-include_directories(../include)
-
 ###############################################################################
 # Targets settings
 

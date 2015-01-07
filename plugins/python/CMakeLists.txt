@@ -2,9 +2,6 @@
 # Python plugin CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/python)
-
 find_package(PythonInterp QUIET)
 find_package(PythonLibs QUIET 2.4)
 find_package(NumPy QUIET 1.5 REQUIRED)

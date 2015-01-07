@@ -2,9 +2,6 @@
 # Merge filter CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/filters/merge)
-
 #
 # Merge Filter
 #

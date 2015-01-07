@@ -2,8 +2,6 @@
 # PgPointCloud plugin CMake configuration
 #
 
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/plugins/pgpointcloud)
 include_directories(${PROJECT_SOURCE_DIR}/io/las)
 
 find_package(PostgreSQL)
