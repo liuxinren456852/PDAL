@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# src/CMakeLists.txt controls building of PDAL library
+# lib/CMakeLists.txt controls building of PDAL library
 #
 # Copyright (c) 2009 Mateusz Loskot <mateusz@loskot.net>
 #
@@ -14,6 +14,10 @@
 #   PDAL_HPP - all the .hpp files
 #   PDAL_<dirname>_CPP - all the .cpp files for the given subdir/namespace
 #   ...
+
+add_subdirectory(IO)
+add_subdirectory(Filters)
+add_subdirectory(Kernels)
 
 set(PDAL_HEADERS_DIR "${PROJECT_SOURCE_DIR}/include/pdal")
 set(PDAL_UTIL_DIR "${PROJECT_SOURCE_DIR}/util")
@@ -51,6 +55,10 @@ set(PDAL_BASE_HPP
   "${PDAL_HEADERS_DIR}/gitsha.h"
   "${PDAL_HEADERS_DIR}/IStream.hpp"
   "${PDAL_HEADERS_DIR}/KDIndex.hpp"
+  "${PDAL_HEADERS_DIR}/Kernel.hpp"
+  "${PDAL_HEADERS_DIR}/KernelFactory.hpp"
+  "${PDAL_HEADERS_DIR}/KernelInfo.hpp"
+  "${PDAL_HEADERS_DIR}/KernelSupport.hpp"
   "${PDAL_HEADERS_DIR}/Log.hpp"
   "${PDAL_HEADERS_DIR}/Metadata.hpp"
   "${PDAL_HEADERS_DIR}/Options.hpp"
@@ -73,7 +81,6 @@ set(PDAL_BASE_HPP
   "${PDAL_HEADERS_DIR}/UserCallback.hpp"
   "${PDAL_HEADERS_DIR}/Utils.hpp"
   "${PDAL_HEADERS_DIR}/Writer.hpp"
-  "${PDAL_HEADERS_DIR}/Kernels.hpp"
     ${PDAL_XML_HEADER}
     ${DB_DRIVER_HEADERS}
 )
@@ -86,6 +93,10 @@ set(PDAL_BASE_CPP
   GDALUtils.cpp
   GlobalEnvironment.cpp
   KDIndex.cpp
+  Kernel.cpp
+  KernelFactory.cpp
+  KernelInfo.cpp
+  KernelSupport.cpp
   Log.cpp
   Options.cpp
   PDALUtils.cpp
@@ -118,7 +129,7 @@ list (APPEND PDAL_HPP ${PDAL_BASE_HPP} )
 if (PDAL_HAVE_PYTHON)
     set(PDAL_PLANG_PATH plang)
     set(PDAL_PLANG_HEADERS "${PDAL_HEADERS_DIR}/${PDAL_PLANG_PATH}")
-    set(PDAL_PLANG_SRC "${PROJECT_SOURCE_DIR}/src/${PDAL_PLANG_PATH}")
+    set(PDAL_PLANG_SRC "${PROJECT_SOURCE_DIR}/lib/${PDAL_PLANG_PATH}")
 
     set(PDAL_PLANG_HPP
       "${PDAL_PLANG_HEADERS}/BufferedInvocation.hpp"
@@ -152,7 +163,7 @@ set(PDAL_CONFIG_HPP
 )
 
 set (PDAL_CONFIG_CPP
-  "${PROJECT_SOURCE_DIR}/src/pdal_config.cpp"
+  "${PROJECT_SOURCE_DIR}/lib/pdal_config.cpp"
 )
 
 list (APPEND PDAL_CPP ${PDAL_CONFIG_CPP} )

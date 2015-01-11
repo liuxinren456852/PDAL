@@ -34,8 +34,8 @@
 
 #include "gtest/gtest.h"
 
-#include <SbetReader.hpp>
-#include <SbetWriter.hpp>
+#include <Sbet/SbetReader.hpp>
+#include <Sbet/SbetWriter.hpp>
 
 #include "Support.hpp"
 

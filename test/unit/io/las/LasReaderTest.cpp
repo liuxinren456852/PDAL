@@ -35,7 +35,7 @@
 #include "gtest/gtest.h"
 
 #include <pdal/PointBuffer.hpp>
-#include <LasReader.hpp>
+#include <Las/LasReader.hpp>
 #include "Support.hpp"
 
 using namespace pdal;

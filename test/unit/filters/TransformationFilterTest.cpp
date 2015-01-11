@@ -33,7 +33,7 @@
 ****************************************************************************/
 
 #include "gtest/gtest.h"
-#include <TransformationFilter.hpp>
+#include <Transformation/TransformationFilter.hpp>
 
 #include <pdal/StageFactory.hpp>
 

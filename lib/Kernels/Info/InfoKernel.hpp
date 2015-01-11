@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2014, Bradley J Chambers (brad.chambers@gmail.com)
+* Copyright (c) 2013, Howard Butler (hobu.inc@gmail.com)
 *
 * All rights reserved.
 *
@@ -34,30 +34,71 @@
 
 #pragma once
 
-#include "Kernel.hpp"
+#include <pdal/Kernel.hpp>
+
+#include <pdal/Stage.hpp>
+#include <pdal/FileUtils.hpp>
+#include <pdal/PointBuffer.hpp>
+
+#include <boost/property_tree/xml_parser.hpp>
+
+#ifdef __clang__
+#pragma GCC diagnostic ignored "-Wtautological-constant-out-of-range-compare"
+#endif
+
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/tokenizer.hpp>
+
+#include <pdal/KernelSupport.hpp>
+
+typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
 
 namespace pdal
 {
 
-class PDAL_DLL SortKernel : public Kernel
+class PDAL_DLL InfoKernel : public Kernel
 {
 public:
-    SET_KERNEL_NAME ("sort", "Sort Kernel")
-    SET_KERNEL_LINK ("http://pdal.io/kernels/kernels.sort.html")
+    SET_KERNEL_NAME ("info", "Info Kernel")
+    SET_KERNEL_LINK ("http://pdal.io/kernels/kernels.info.html")
  
-    SortKernel();
-    int execute();
+    InfoKernel();
+    int execute(); // overrride
 
 private:
-    void addSwitches();
-    void validateSwitches();
+    void addSwitches(); // overrride
+    void validateSwitches(); // overrride
 
-    std::unique_ptr<Stage> makeReader(Options readerOptions);
+    void dump(std::ostream& o);
+
+    MetadataNode dumpPoints(PointBufferPtr buf) const;
+    MetadataNode dumpStats() const;
+    void dumpPipeline() const;
+    MetadataNode dumpSummary(const QuickInfo& qi);
+    MetadataNode dumpQuery(PointBufferPtr buf) const;
 
     std::string m_inputFile;
-    std::string m_outputFile;
-    bool m_bCompress;
-    bool m_bForwardMetadata;
+    bool m_showStats;
+    bool m_showSchema;
+    bool m_showStage;
+    bool m_boundary;
+    pdal::Options m_options;
+    std::string m_pointIndexes;
+    bool m_useXML;
+    bool m_useJSON;
+    bool m_useRST;
+    std::string m_Dimensions;
+    std::string m_QueryPoint;
+    double m_QueryDistance;
+    std::string m_pipelineFile;
+    bool m_showSummary;
+
+    Stage *m_statsStage;
+    Stage *m_hexbinStage;
+    Reader *m_reader;
+
+    MetadataNode m_tree;
+    std::unique_ptr<PipelineManager> m_manager;
 };
 
 } // namespace pdal

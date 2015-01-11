@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2014, Howard Butler (howard@hobu.co)
+* Copyright (c) 2014, Bradley J Chambers (brad.chambers@gmail.com)
 *
 * All rights reserved.
 *
@@ -32,40 +32,49 @@
 * OF SUCH DAMAGE.
 ****************************************************************************/
 
-#pragma once
+#include <iomanip>
 
-#include "Kernel.hpp"
-#include <pdal/Stage.hpp>
-#include <pdal/FileUtils.hpp>
-#include <pdal/PointBuffer.hpp>
+#include <boost/algorithm/string.hpp>
 
-#include <boost/property_tree/ptree.hpp>
+#include <pdal/KernelInfo.hpp>
 
 namespace pdal
 {
-    
 
-class PDAL_DLL DiffKernel : public Kernel
+
+std::ostream& operator<<(std::ostream& ostr, const KernelInfo& info)
 {
-public:
-    SET_KERNEL_NAME ("diff", "Diff Kernel")
-    SET_KERNEL_LINK ("http://pdal.io/kernels/kernels.diff.html")
- 
-    DiffKernel();
-    int execute(); // overrride
-    
-    
-private:
-    void addSwitches(); // overrride
-    void validateSwitches(); // overrride
-    
-    void checkPoints(const PointBuffer& source_data,
-        const PointBuffer& candidate_data,
-        boost::property_tree::ptree& errors);
-    std::string m_sourceFile;
-    std::string m_candidateFile;
-    bool m_useXML;
-    bool m_useJSON;
-};
+    // boost::property_tree::ptree tree = kernel.toPTree();
+    //
+    // boost::property_tree::write_json(ostr, tree);
 
-} // pdal
+    return ostr;
+}
+
+KernelInfo::KernelInfo(std::string const& name, std::string const& description)
+    : m_name(name), m_description(description) {}
+
+/// copy constructor
+KernelInfo::KernelInfo(KernelInfo const& other)
+    : m_name(other.m_name)
+    , m_description(other.m_description)
+    , m_link(other.m_link)
+{
+    return;
+}
+
+/// assignment operator
+KernelInfo& KernelInfo::operator=(KernelInfo const& rhs)
+{
+    if (&rhs != this)
+    {
+        m_name = rhs.m_name;
+        m_description = rhs.m_description;
+        m_link = rhs.m_link;
+    }
+
+    return *this;
+}
+
+
+} // namespace pdal

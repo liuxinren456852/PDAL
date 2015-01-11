@@ -33,7 +33,7 @@
 ****************************************************************************/
 
 #include <pdal/GlobalEnvironment.hpp>
-#include "Kernel.hpp"
+#include <pdal/Kernel.hpp>
 #include <iostream>
 
 #include <boost/algorithm/string.hpp>
@@ -43,7 +43,7 @@
 
 #include <pdal/pdal_config.hpp>
 
-#include <buffer/BufferReader.hpp>
+#include <Buffer/BufferReader.hpp>
 
 #include <memory>
 #include <vector>

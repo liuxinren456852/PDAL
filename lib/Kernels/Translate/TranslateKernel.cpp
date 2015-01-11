@@ -33,9 +33,9 @@
 ****************************************************************************/
 
 #include "TranslateKernel.hpp"
-#include "KernelSupport.hpp"
+#include <pdal/KernelSupport.hpp>
 
-#include <buffer/BufferReader.hpp>
+#include <Buffer/BufferReader.hpp>
 #include <pdal/StageFactory.hpp>
 #include <reprojection/ReprojectionFilter.hpp>
 

@@ -193,7 +193,7 @@ get_git_head_revision(GIT_REFSPEC GIT_SHA1)
 
 configure_file(
   "${PROJECT_SOURCE_DIR}/gitsha.cpp.in"
-  "${PROJECT_SOURCE_DIR}/src/gitsha.cpp")
+  "${PROJECT_SOURCE_DIR}/lib/gitsha.cpp")
 
 # needs to come before configuration of pdal_defines
 if(APPLE)
@@ -219,10 +219,7 @@ include_directories(vendor/nanoflann-1.1.8)
 set(PDAL_TARGET_OBJECTS "")
 
 add_subdirectory(util)
-add_subdirectory(io)
-add_subdirectory(filters)
-add_subdirectory(kernels)
-add_subdirectory(src)
+add_subdirectory(lib)
 add_subdirectory(tools)
 
 if(WITH_TESTS)

@@ -35,7 +35,7 @@
 #include "gtest/gtest.h"
 
 #include <pdal/FileUtils.hpp>
-#include <LasReader.hpp>
+#include <Las/LasReader.hpp>
 
 #include "Support.hpp"
 

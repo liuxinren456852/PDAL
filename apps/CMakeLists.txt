@@ -69,7 +69,7 @@ endif(APPLE AND PDAL_BUNDLE)
 
 if(UNIX)
 
-    get_directory_property(PDAL_DEFINITIONS DIRECTORY ${PDAL_SOURCE_DIR}/../src COMPILE_DEFINITIONS)
+    get_directory_property(PDAL_DEFINITIONS DIRECTORY ${PDAL_SOURCE_DIR}/../lib COMPILE_DEFINITIONS)
 
     set(PDAL_CONFIG_DEFINITIONS "")
     foreach(definition ${PDAL_DEFINITIONS})

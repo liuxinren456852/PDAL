@@ -34,9 +34,9 @@
 
 #include "gtest/gtest.h"
 
-#include <ChipperFilter.hpp>
-#include <LasWriter.hpp>
-#include <LasReader.hpp>
+#include <Chipper/ChipperFilter.hpp>
+#include <Las/LasWriter.hpp>
+#include <Las/LasReader.hpp>
 #include <pdal/Options.hpp>
 
 #include "StageTester.hpp"

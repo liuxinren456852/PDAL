@@ -36,8 +36,8 @@
 
 #include <pdal/SpatialReference.hpp>
 #include <pdal/FileUtils.hpp>
-#include <LasWriter.hpp>
-#include <LasReader.hpp>
+#include <Las/LasWriter.hpp>
+#include <Las/LasReader.hpp>
 
 #include "Support.hpp"
 

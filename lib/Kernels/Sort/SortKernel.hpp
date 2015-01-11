@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2014, Brad Chambers (brad.chambers@gmail.com)
+* Copyright (c) 2014, Bradley J Chambers (brad.chambers@gmail.com)
 *
 * All rights reserved.
 *
@@ -34,41 +34,30 @@
 
 #pragma once
 
-#include <pdal/FileUtils.hpp>
-#include "Kernel.hpp"
-
-#include <pdal/Bounds.hpp>
-
-#define SEPARATORS ",| "
-
-#include <boost/tokenizer.hpp>
-typedef boost::tokenizer<boost::char_separator<char> > tokenizer;
+#include <pdal/Kernel.hpp>
 
 namespace pdal
 {
 
-class PDAL_DLL RandomKernel : public Kernel
+class PDAL_DLL SortKernel : public Kernel
 {
 public:
-    SET_KERNEL_NAME ("random", "Random Kernel")
-    SET_KERNEL_LINK ("http://pdal.io/kernels/kernels.random.html")
-
-    RandomKernel();
+    SET_KERNEL_NAME ("sort", "Sort Kernel")
+    SET_KERNEL_LINK ("http://pdal.io/kernels/kernels.sort.html")
+ 
+    SortKernel();
     int execute();
 
 private:
     void addSwitches();
     void validateSwitches();
 
-    Stage* makeReader(Options readerOptions);
+    std::unique_ptr<Stage> makeReader(Options readerOptions);
 
+    std::string m_inputFile;
     std::string m_outputFile;
     bool m_bCompress;
-    uint64_t m_numPointsToWrite;
-    BOX3D m_bounds;
-    std::string m_distribution;
-    std::string m_means;
-    std::string m_stdevs;
+    bool m_bForwardMetadata;
 };
 
-} // pdal
+} // namespace pdal

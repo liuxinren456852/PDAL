@@ -36,7 +36,7 @@
 
 #include <pdal/PointBuffer.hpp>
 #include <pdal/StageFactory.hpp>
-#include <DecimationFilter.hpp>
+#include <Decimation/DecimationFilter.hpp>
 
 using namespace pdal;
 

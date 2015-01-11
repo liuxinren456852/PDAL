@@ -34,10 +34,10 @@
 
 #include "SortKernel.hpp"
 
-#include "KernelSupport.hpp"
+#include <pdal/KernelSupport.hpp>
 #include <pdal/StageFactory.hpp>
 
-#include <buffer/BufferReader.hpp>
+#include <Buffer/BufferReader.hpp>
 
 namespace pdal
 {
