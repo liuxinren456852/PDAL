@@ -218,7 +218,7 @@ include_directories(vendor/nanoflann-1.1.8)
 # PDAL_TARGET_OBJECTS is used to collect the driver object libraries
 set(PDAL_TARGET_OBJECTS "")
 
-add_subdirectory(util)
+add_subdirectory(lib/Util)
 add_subdirectory(lib)
 add_subdirectory(tools)
 
