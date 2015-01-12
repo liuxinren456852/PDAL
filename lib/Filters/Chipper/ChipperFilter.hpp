@@ -44,7 +44,7 @@
 #include <vector>
 
 #include <pdal/Filter.hpp>
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 #include <pdal/PointBuffer.hpp>
 
 namespace pdal

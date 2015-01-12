@@ -39,7 +39,7 @@
 #include <boost/algorithm/string.hpp>
 #include <pdal/Dimension.hpp>
 #include <pdal/pdal_defines.h>
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 #include <pdal/PointContext.hpp>
 #include <pdal/PointBuffer.hpp>
 #include <pdal/Options.hpp>

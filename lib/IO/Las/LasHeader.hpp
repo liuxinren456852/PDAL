@@ -41,7 +41,7 @@
 #include <boost/uuid/uuid.hpp>
 #include <boost/property_tree/ptree.hpp>
 
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 #include <pdal/pdal_config.hpp>
 #include <pdal/gitsha.h>
 

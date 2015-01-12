@@ -36,7 +36,7 @@
 
 // support functions for unit testing
 
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 #include <pdal/Utils.hpp>
 
 namespace pdal

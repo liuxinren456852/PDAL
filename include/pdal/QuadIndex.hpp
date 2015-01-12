@@ -38,7 +38,7 @@
 #include <memory>
 
 #include <pdal/pdal_export.hpp>
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 
 namespace pdal
 {

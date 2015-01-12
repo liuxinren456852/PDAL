@@ -36,7 +36,7 @@
 
 #include <boost/property_tree/xml_parser.hpp>
 
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 #include <pdal/PDALUtils.hpp>
 
 using namespace pdal;

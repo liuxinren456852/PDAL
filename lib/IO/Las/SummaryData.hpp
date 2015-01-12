@@ -38,7 +38,7 @@
 #include <array>
 
 #include <pdal/pdal_internal.hpp>
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 
 #include "LasHeader.hpp"
 

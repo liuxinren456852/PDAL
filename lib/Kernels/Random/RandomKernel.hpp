@@ -37,7 +37,7 @@
 #include <pdal/FileUtils.hpp>
 #include <pdal/Kernel.hpp>
 
-#include <pdal/Bounds.hpp>
+#include <pdal/Util/Bounds.hpp>
 
 #define SEPARATORS ",| "
 
